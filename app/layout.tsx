@@ -1,9 +1,13 @@
-import './globals.css';
 import { Montserrat } from 'next/font/google';
-import Footer from './components/Footer';
 import type { Metadata } from 'next';
+
+/** Functional */
+import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import SocialMedia from './components/SocialMedia';
+
+/** Assets */
+import './globals.css';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -23,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <div className="flex min-h-[100dvh] flex-col gap-2 py-4">
           <Navbar />
-          <main className="relative w-full flex-grow border-[1px] border-divider-main">
+          <main className="relative flex w-full flex-grow border-[1px] border-divider-main">
             {children}
             <SocialMedia />
           </main>

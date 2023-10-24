@@ -1,8 +1,9 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+/** Libraries */
 import { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -27,10 +28,9 @@ const Navbar = () => {
 
   const moveSvgLine = () => {
     const element = document.getElementsByClassName('active-link')[0] as HTMLAnchorElement;
-    const navbar = element.parentElement?.parentElement;
     const svgLine = document.getElementById('navbar-svg-line');
-    if (svgLine && navbar) {
-      svgLine.style.left = `${(element.offsetLeft / navbar.clientWidth) * 100}%`;
+    if (svgLine) {
+      svgLine.style.transform = `translate(${element.offsetLeft}px`;
       svgLine.style.width = `${element.clientWidth}px`;
     }
   };
