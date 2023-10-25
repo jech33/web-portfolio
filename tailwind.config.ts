@@ -24,6 +24,18 @@ const config: Config = {
         'divider-main': '#94A1B2',
         'divider-light': '#A9B3C1',
       },
+      keyframes: {
+        typewriter: {
+          '0%': { opacity: '0' },
+          '1%': { opacity: '1' },
+          '50%': { opacity: '1' },
+          '51%': { opacity: '0' },
+          '100%': { opacity: '0' },
+        },
+      },
+      animation: {
+        typewriter: 'typewriter 1.25s ease-in-out infinite',
+      },
     },
   },
   plugins: [],

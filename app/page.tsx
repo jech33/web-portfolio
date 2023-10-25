@@ -2,6 +2,8 @@ import Image from 'next/image';
 
 /** Assets */
 import ProfilePicture from '@/public/avatar-circle.jpg';
+import lang from './lang';
+import Typewriter from './components/Typewriter';
 
 export default function Home() {
   return (
@@ -11,9 +13,12 @@ export default function Home() {
         <h2>Frontend Developer</h2>
       </div>
       <div className="flex flex-col items-center justify-center gap-10">
-        <p className="text-text-primary md:text-xl lg:text-4xl">
-          Hey! Nice to see you here, I&apos;m Javier and I code
-        </p>
+        <div className="block text-center text-text-primary md:text-xl lg:text-4xl">
+          <p className="">{lang.intro}</p>
+          <p className="mt-3">
+            <Typewriter />
+          </p>
+        </div>
         <Image
           src={ProfilePicture}
           width={150}

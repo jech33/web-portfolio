@@ -1,75 +1,48 @@
 'use client';
 
 /** Libraries */
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
+/** Functional */
+import { moveSvgLine, navbarLinks } from './Navbar.utils';
+
 const Navbar = () => {
   const pathname = usePathname();
-  const svgRef = useRef<SVGSVGElement | null>(null);
-  const routes = [
-    {
-      label: 'me',
-      path: '/',
-      className: '',
-    },
-    {
-      label: 'work',
-      path: '/work',
-      className: 'justify-center',
-    },
-    {
-      label: 'about',
-      path: '/about',
-      className: 'justify-end',
-    },
-  ];
-
-  const moveSvgLine = () => {
-    const element = document.getElementsByClassName('active-link')[0] as HTMLAnchorElement;
-    const svgLine = document.getElementById('navbar-svg-line');
-    if (svgLine) {
-      svgLine.style.transform = `translate(${element.offsetLeft}px`;
-      svgLine.style.width = `${element.clientWidth}px`;
-    }
-  };
+  const [durations, setDurations] = useState({
+    navAfter: 'after:duration-0',
+    linkColors: 'duration-0',
+  });
 
   useEffect(() => {
-    moveSvgLine();
+    moveSvgLine(pathname);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   useEffect(() => {
-    window.addEventListener('resize', moveSvgLine);
-
-    return () => {
-      window.removeEventListener('resize', moveSvgLine);
-    };
+    setDurations({
+      navAfter: 'after:duration-500',
+      linkColors: 'duration-400',
+    });
   }, []);
 
   return (
-    <nav className="relative w-full text-text-secondary">
-      <svg
-        id={'navbar-svg-line'}
-        ref={svgRef}
-        className="absolute -bottom-[9px] z-50 h-[2px] transition-all"
-        width="0"
-      >
-        <line
-          className="stroke-secondary-main stroke-[5]"
-          x1="0"
-          y1="0"
-          x2="100"
-          y2="0"
-          preserveAspectRatio="xMidYMax slice"
-        />
-      </svg>
-      <ul className="flex justify-between gap-2">
-        {routes.map((item, index) => (
-          <li key={index} className={`flex w-[70px] ${item.className}`}>
+    <nav
+      className={`after:content-[' '] relative z-50 w-full overflow-x-clip text-text-secondary  
+      after:absolute after:-bottom-[10px] after:-z-10 after:h-[2px] after:w-full after:origin-left
+      after:translate-x-[var(--left)] after:scale-x-[var(--width,0px)] after:bg-secondary-main after:transition-transform ${durations.navAfter}
+      `}
+      style={{ '--left': 0, '--width': 0 } as React.CSSProperties}
+      role="navigation"
+    >
+      <ul className="flex justify-between gap-2" role="tablist">
+        {navbarLinks.map((item, index) => (
+          <li key={index} className={`flex w-[70px] ${item.className}`} role="tab">
             <Link
-              className={`h-full transition duration-200 ease-in-out hover:text-secondary-main active:text-secondary-light  ${
-                pathname === item.path ? 'active-link text-secondary-main' : ''
+              className={`h-full transition-colors  ease-in-out hover:text-secondary-main active:text-secondary-light  
+              ${durations.linkColors} ${
+                pathname === item.path ? 'active-link text-secondary-main' : 'not-active'
               }`}
               href={item.path}
             >
