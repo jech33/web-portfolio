@@ -15,7 +15,7 @@ const Typewriter = () => {
       timeout = setTimeout(() => {
         setCurrentText((prevText) => prevText + currentPhrase[currentIndex]);
         setCurrentIndex((prevIndex) => prevIndex + 1);
-      }, 225);
+      }, 100);
     } else {
       // ADD THIS CHECK
       const newPhraseIndex = lang.introPhrases.findIndex((phrase) => phrase === currentPhrase) + 1;

@@ -8,6 +8,7 @@ const SocialMedia = () => {
     <ul className="absolute bottom-0 flex h-28 w-full items-end justify-center gap-5 bg-gradient-to-t from-background-main from-50% pb-6">
       <li>
         <a
+          className="[&>svg>path]:transition-all [&>svg>path]:duration-200 [&>svg>path]:hover:fill-secondary-main [&>svg>path]:active:fill-secondary-light [&>svg]:transition-all [&>svg]:active:scale-105"
           href="mailto:jechavezch@gmail.com?subject=Regarding your web portfolio"
           aria-label="email"
         >
@@ -16,6 +17,7 @@ const SocialMedia = () => {
       </li>
       <li>
         <a
+          className="[&>svg>g>path]:transition-all [&>svg>g>path]:duration-200 [&>svg>g>path]:hover:fill-secondary-main [&>svg>g>path]:active:fill-secondary-light [&>svg]:transition-all [&>svg]:active:scale-105"
           target="_blank"
           href="https://www.linkedin.com/in/javier-echavez-chardaux/"
           aria-label="linkedin"
@@ -24,7 +26,12 @@ const SocialMedia = () => {
         </a>
       </li>
       <li>
-        <a target="_blank" href="https://github.com/jech33" aria-label="github">
+        <a
+          className="[&>svg>g>path]:transition-all [&>svg>g>path]:duration-200 [&>svg>g>path]:hover:fill-secondary-main [&>svg>g>path]:active:fill-secondary-light [&>svg]:transition-all [&>svg]:active:scale-105"
+          target="_blank"
+          href="https://github.com/jech33"
+          aria-label="github"
+        >
           <GithubIcon />
         </a>
       </li>
