@@ -1,9 +1,7 @@
-import Image from 'next/image';
-
 /** Assets */
-import ProfilePicture from '@/public/avatar-circle.jpg';
 import lang from './_locales';
 import Typewriter from './_components/Typewriter';
+import IntroAvatar from './_components/IntroAvatar';
 
 export default function Home() {
   return (
@@ -18,13 +16,7 @@ export default function Home() {
             {`${lang.intro} `} <br /> <Typewriter />
           </p>
         </div>
-        <Image
-          src={ProfilePicture}
-          width={200}
-          height={200}
-          alt="avatar-picture"
-          className="rounded-full"
-        />
+        <IntroAvatar />
       </div>
       <p className="pb-2 lg:max-w-[50%]">{lang.briefDescription}</p>
     </div>
