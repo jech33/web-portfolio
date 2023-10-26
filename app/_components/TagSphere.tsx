@@ -72,7 +72,7 @@ const TagSphere = () => {
     <div className="tagSphere relative flex h-[200px] w-[200px] items-center justify-center">
       <span
         ref={containerRef}
-        className="tagSphereContainer left-0 top-0 inline-block h-[200px] w-[200px] text-divider-light [&>.tagcloud]:h-[100%_!important] [&>.tagcloud]:w-[100%_!important] [&>.tagcloud]:select-none"
+        className="tagSphereContainer left-0 top-0 inline-block h-[200px] w-[200px] text-divider-light [&>.tagcloud]:h-[200px_!important] [&>.tagcloud]:w-[200px_!important] [&>.tagcloud]:select-none"
       />
     </div>
   );

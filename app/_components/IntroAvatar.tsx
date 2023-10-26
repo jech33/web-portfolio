@@ -7,21 +7,37 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 const IntroAvatar = () => {
   const [showAvatar, setShowAvatar] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(false);
   const animationVariants = {
     visible: { scale: 1 },
     hidden: { scale: 0 },
   };
 
+  const handleAnimationEnd = () => {
+    setIsAnimating(false);
+  };
+
+  console.log(isAnimating);
+
   return (
-    <button onClick={() => setShowAvatar((prev) => !prev)}>
-      <AnimatePresence initial={false} mode="wait">
-        {showAvatar ? (
+    <button
+      onClick={() => {
+        if (!isAnimating) {
+          setIsAnimating(true);
+          setShowAvatar((prev) => !prev);
+        }
+      }}
+      className="relative h-[200px] w-[200px]"
+    >
+      <AnimatePresence initial={false} mode="wait" onExitComplete={handleAnimationEnd}>
+        {showAvatar && (
           <motion.div
             key={1}
             initial={'hidden'}
             animate={'visible'}
             exit={'hidden'}
             variants={animationVariants}
+            className="absolute top-0 h-full w-full"
           >
             <Image
               src={ProfilePicture}
@@ -31,13 +47,15 @@ const IntroAvatar = () => {
               className="rounded-full"
             />
           </motion.div>
-        ) : (
+        )}
+        {!showAvatar && (
           <motion.div
             key={2}
             initial={'hidden'}
             animate={'visible'}
             exit={'hidden'}
             variants={animationVariants}
+            className="absolute top-0 h-full w-full"
           >
             <TagSphere />
           </motion.div>
