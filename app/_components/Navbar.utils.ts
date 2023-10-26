@@ -1,4 +1,4 @@
-import lang from '@/lang';
+import lang from '@/_locales';
 
 export const navbarLinks = [
   {

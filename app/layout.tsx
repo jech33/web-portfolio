@@ -2,9 +2,9 @@ import { Montserrat } from 'next/font/google';
 import type { Metadata } from 'next';
 
 /** Functional */
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import SocialMedia from './components/SocialMedia';
+import Footer from './_components/Footer';
+import Navbar from './_components/Navbar';
+import SocialMedia from './_components/SocialMedia';
 
 /** Assets */
 import './globals.css';

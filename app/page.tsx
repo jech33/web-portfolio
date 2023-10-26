@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 /** Assets */
 import ProfilePicture from '@/public/avatar-circle.jpg';
-import lang from './lang';
-import Typewriter from './components/Typewriter';
+import lang from './_locales';
+import Typewriter from './_components/Typewriter';
 
 export default function Home() {
   return (

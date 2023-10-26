@@ -1,6 +1,6 @@
 'use client';
 
-import lang from '@/lang';
+import lang from '@/_locales';
 import { useEffect, useState } from 'react';
 
 const Typewriter = () => {
