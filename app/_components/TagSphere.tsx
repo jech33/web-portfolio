@@ -20,7 +20,9 @@ const TagSphere = () => {
     'Gitlab',
     'Bitbucket',
     'JIRA',
-    'Babel',
+    'Zustand',
+    'Redux',
+    'Framer',
     'ES6',
     'Mongo',
   ];
