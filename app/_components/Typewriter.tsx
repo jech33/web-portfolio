@@ -1,7 +1,7 @@
 'use client';
 
-import lang from '@/_locales';
 import { useEffect, useState } from 'react';
+import lang from '@/_locales';
 
 const Typewriter = () => {
   const [currentText, setCurrentText] = useState('');

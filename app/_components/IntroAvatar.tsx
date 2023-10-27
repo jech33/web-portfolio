@@ -17,8 +17,6 @@ const IntroAvatar = () => {
     setIsAnimating(false);
   };
 
-  console.log(isAnimating);
-
   return (
     <button
       onClick={() => {

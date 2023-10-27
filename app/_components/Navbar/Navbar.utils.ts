@@ -1,12 +1,19 @@
 import lang from '@/_locales';
 
-export const navbarLinks = [
+export type NavbarLink = {
+  label: string;
+  path: string;
+  className: string;
+  linePosition: string;
+  modifier: number;
+};
+
+export const navbarLinks: NavbarLink[] = [
   {
     label: lang.navbarMe,
     path: '/',
     className: '',
     linePosition: '0%',
-    lineTransformOrigin: 'left',
     modifier: 0,
   },
   {
@@ -25,16 +32,16 @@ export const navbarLinks = [
   },
 ];
 
-export const moveSvgLine = (pathname: string) => {
+export const moveSvgLine = (navbarLink: NavbarLink, activeElement: HTMLAnchorElement) => {
   const parentContainer = document.querySelector('[role=navigation]') as HTMLAnchorElement;
-  const activeElement = document.getElementsByClassName('active-link')[0] as HTMLAnchorElement;
-  const route = navbarLinks.find((route) => route.path === pathname);
   parentContainer.style.setProperty(
     '--left',
-    route?.linePosition
-      ? !route?.modifier
-        ? route?.linePosition
-        : `calc(${route?.linePosition} - ${activeElement.clientWidth / route?.modifier}px)`
+    navbarLink?.linePosition
+      ? !navbarLink?.modifier
+        ? navbarLink?.linePosition
+        : `calc(${navbarLink?.linePosition} - ${
+            activeElement.clientWidth / navbarLink?.modifier
+          }px)`
       : '0%'
   );
   parentContainer.style.setProperty(
