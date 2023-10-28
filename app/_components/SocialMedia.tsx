@@ -1,7 +1,7 @@
 /** Assets */
-import GithubIcon from '@/_icons/GithubIcon';
-import LinkedinIcon from '@/_icons/LinkedinIcon';
-import MailIcon from '@/_icons/MailIcon';
+import GithubIcon from '@/_assets/GithubIcon';
+import LinkedinIcon from '@/_assets/LinkedinIcon';
+import MailIcon from '@/_assets/MailIcon';
 
 const SocialMedia = () => {
   return (

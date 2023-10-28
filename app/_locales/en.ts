@@ -1,4 +1,6 @@
-import OvernightsImage from '@/public/avatar-square.jpg';
+import LibonatiImage from '@/public/project_libonati.png';
+import OvernightsImage from '@/public/project_overnights.png';
+import VozyImage from '@/public/project_vozy.png';
 
 export const en = {
   navbarMe: 'me',
@@ -46,9 +48,9 @@ export const en = {
       shortDescription:
         'Evolving the relationship between companies and their customers through memorable experiences with conversational AI. New features and bugs fixing.',
       description:
-        'Unlike traditional platforms, Overnights is committed to transparency and fairness. We have completely eliminated fees and hidden costs for both renters and owners, ensuring a level playing field for all. This paradigm shift fosters open communication, giving individuals the freedom to grow their vacation rental businesses with unrivaled autonomy.  My role in this project was to take a beautiful app design and turn it into a functional mobile first web app.',
+        'Lili is a multi-channel conversational assistant powered by conversational AI that will help you automate customer service, transforming repetitive and time-consuming processes into functional systems at a fraction of the cost. My role at Vozy was to take product requirements and work hands on with all engineering areas to develop new features and fix bugs within its web platform.',
       url: 'https://www.vozy.com',
-      mainImageSrc: OvernightsImage,
+      mainImageSrc: VozyImage,
       tags: [
         'role: software engineer',
         '2022',
@@ -66,9 +68,9 @@ export const en = {
       shortDescription:
         'Rock music inspired by magic, quantum physics and multiverses. Website with CMS built in.',
       description:
-        'Unlike traditional platforms, Overnights is committed to transparency and fairness. We have completely eliminated fees and hidden costs for both renters and owners, ensuring a level playing field for all. This paradigm shift fosters open communication, giving individuals the freedom to grow their vacation rental businesses with unrivaled autonomy.  My role in this project was to take a beautiful app design and turn it into a functional mobile first web app.',
+        'After their first appearance in Ruido Caribe, Bruno formed a band with his friends Javier Echavez (bass), Juan Carlos Freyle (guitar), and Marlon Cabarcas (drums). The band became solid since the time it was formed, and each member’s focus took Bruno Libonati to the next level, having success in different festivals and rock venues in Medellín, Bogotá, and Barranquilla. My role in this project was to design and build the website from zero and deploy it.',
       url: 'https://brunolibonati.vercel.app',
-      mainImageSrc: OvernightsImage,
+      mainImageSrc: LibonatiImage,
       tags: [
         'role: frontend developer',
         '2022',

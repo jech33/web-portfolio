@@ -31,7 +31,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navbar />
           <main className="relative z-0 flex w-full flex-grow overflow-auto border-[1px] border-divider-main">
             <div className="absolute top-0 flex h-6 w-full items-end justify-center gap-5 bg-gradient-to-b from-background-main from-20%" />
-            {children}
+            <div className="z-1 flex max-h-full flex-grow flex-col justify-between overflow-auto px-6 pb-[96px] pt-6">
+              {children}
+            </div>
             <SocialMedia />
           </main>
           <Footer />
