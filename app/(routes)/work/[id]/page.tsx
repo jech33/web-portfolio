@@ -16,7 +16,7 @@ const WorkId = (props: { params: { id: string } }) => {
   const shortUrl = url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0];
 
   return (
-    <article className="mx-auto flex w-full max-w-[720px] flex-col gap-6 pb-6 pt-6">
+    <article className="mx-auto flex w-full max-w-[720px] flex-col gap-6 pt-6">
       <section className="flex flex-col gap-6">
         <div className="flex flex-col md:flex-row md:gap-4">
           <h1 className="text-3xl lg:text-5xl">{title}</h1>
