@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import Footer from './_components/Footer';
 import Navbar from './_components/Navbar';
 import SocialMedia from './_components/SocialMedia';
+import { baseUrl } from './config';
 
 /** Assets */
 import './globals.css';
@@ -13,10 +14,38 @@ import FixedLoader from './_components/FixedLoader';
 const montserrat = Montserrat({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: 'Javier Echavez',
-  description: 'Javier Echavez Chardaux web portfolio',
+  description: 'Javier Echavez Chardaux’s personal website',
   icons: {
     icon: ['/favicon.ico'],
+  },
+  authors: [
+    {
+      name: 'Javier Echavez Chardaux',
+      url: 'https://github.com/jech33',
+    },
+  ],
+  keywords: [
+    'jech33',
+    'jech',
+    'react',
+    'frontend',
+    'javier',
+    'javier echavez',
+    'javier echavez chardaux',
+  ],
+  openGraph: {
+    type: 'website',
+    url: 'jech.vercel.app',
+    title: 'Javier Echavez',
+    description: 'Javier Echavez Chardaux’s personal website',
+    siteName: 'jech',
+    images: [
+      {
+        url: '../public/avatar-circle.jpg',
+      },
+    ],
   },
 };
 
