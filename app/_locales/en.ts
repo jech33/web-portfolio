@@ -82,4 +82,94 @@ export const en = {
       ],
     },
   ],
+  about: {
+    title: 'A little about me',
+    description:
+      'Hey there! I’m Javier, but feel free to call me Javi. I’m a web developer based in sunny Barranquilla, Colombia. While I’m passionate about Frontend Development, I’m also quite the curious cat and dabble in backend magic. Since 2015, I’ve been weaving code into all my engineering endeavors, and there’s nothing quite like the satisfaction of seeing it all click (just the way clients/users pick 👀).',
+    workExperience: {
+      title: 'Work Experience',
+      items: [
+        {
+          label: 'Tech Lead React Node',
+          place: 'Overnights',
+          time: 'JUL 2023 - PRESENT',
+        },
+        {
+          label: 'Fullstack Developer React Node',
+          place: 'Overnights',
+          time: 'MAY 2023 - JUL 2023',
+        },
+        {
+          label: 'Frontend Developer React',
+          place: 'Overnights',
+          time: 'JUL 2022 - MAY 2023',
+        },
+        {
+          label: 'Frontend Engineer React',
+          place: 'Vozy',
+          time: 'FEB 2022 - SEP 2022',
+        },
+        {
+          label: 'Jr. Software Developer React Node',
+          place: 'Ludycom',
+          time: 'SEP 2021 - JAN 2022',
+        },
+        {
+          label: 'Transportation Engineer',
+          place: 'Instituto de Transito del Atlantico',
+          time: 'NOV 2020 - JUL 2021',
+        },
+        {
+          label: 'Jr. Transportation Engineer',
+          place: 'BH Ingenieria y Desarrollo',
+          time: 'JAN 2020 - DEC 2020',
+        },
+        {
+          label: 'Assistant Research Engineer',
+          place: 'Universidad del Norte',
+          time: 'SEP 2017 - JUL 2019',
+        },
+      ],
+    },
+    education: {
+      title: 'EDUCATION',
+      items: [
+        {
+          label: 'Certified Software and Web Applications Developer',
+          place: 'Universidad del Norte',
+          time: 'CLASS OF 2021',
+        },
+        {
+          label: 'Master of Science in Transportation Engineering',
+          place: 'Universidad del Norte',
+          time: 'CLASS OF 2021',
+        },
+        {
+          label: 'Bachelor of Civil Engineering',
+          place: 'Universidad del Norte',
+          time: 'CLASS OF 2018',
+        },
+      ],
+    },
+    recognitions: {
+      title: 'Recognitions',
+      items: [
+        {
+          label: 'Saber Pro Colombia Engineering Top Scores',
+          place: 'Universidad del Norte',
+          time: '2017',
+        },
+        {
+          label: 'Scholarship Program: Academic Excellence',
+          place: 'Gases del Caribe',
+          time: '2013',
+        },
+        {
+          label: 'ICFES Colombia Rank 3 out of 1000',
+          place: 'Colegio del Sagrado Scorazón',
+          time: '2012',
+        },
+      ],
+    },
+  },
 };
