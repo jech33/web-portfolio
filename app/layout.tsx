@@ -41,9 +41,11 @@ export const metadata: Metadata = {
     title: 'Javier Echavez',
     description: 'Javier Echavez Chardaux’s personal website',
     siteName: 'jech',
+
     images: [
       {
-        url: 'https://media.licdn.com/dms/image/D4E03AQFjTcGjEQA_Kg/profile-displayphoto-shrink_800_800/0/1664816698774?e=1704326400&v=beta&t=HEIkNXZW_j1ESmEe12aAApBQUSrCpLFRhqh20digc-E',
+        alt: 'Javier Echavez Linkedin Image',
+        url: 'https://jech.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-original.e1777d66.jpg&w=1200&q=75',
       },
     ],
   },
