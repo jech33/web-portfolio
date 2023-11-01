@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: 'jech',
     images: [
       {
-        url: '../public/avatar-circle.jpg',
+        url: 'https://media.licdn.com/dms/image/D4E03AQFjTcGjEQA_Kg/profile-displayphoto-shrink_800_800/0/1664816698774?e=1704326400&v=beta&t=HEIkNXZW_j1ESmEe12aAApBQUSrCpLFRhqh20digc-E',
       },
     ],
   },
