@@ -6,7 +6,7 @@ import IntroAvatar from './_components/IntroAvatar';
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col items-end text-text-secondary">
+      <div className="flex flex-col items-end pt-6 text-text-secondary">
         <h1 className="text-3xl sm:text-4xl">Javier Echavez</h1>
         <h2>Frontend Developer</h2>
       </div>

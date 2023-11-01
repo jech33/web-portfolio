@@ -72,7 +72,7 @@ export const en = {
       url: 'https://brunolibonati.vercel.app',
       mainImageSrc: LibonatiImage,
       tags: [
-        'role: frontend developer',
+        'role: developer',
         '2022',
         'web development',
         'React.js',

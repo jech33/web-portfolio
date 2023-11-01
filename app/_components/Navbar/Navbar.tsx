@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { NavbarLink, moveSvgLine, navbarLinks } from './Navbar.utils';
 
 const Navbar = () => {
-  const pathname = usePathname();
+  const pathname = `/${usePathname().split('/')[1]}`;
   const navRef = useRef<HTMLElement>(null);
   const [activeElement, setActiveElement] = useState<HTMLAnchorElement | null>(null);
   const [durations, setDurations] = useState({
@@ -26,12 +26,17 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    const link = navbarLinks.find((item) => item.path === pathname) || navbarLinks[0];
+    const element = document.querySelector(`[href="${pathname}"]`) as HTMLAnchorElement;
+    if (!element) {
+      return;
+    }
+
     setDurations({
       navAfter: 'after:duration-500',
       linkColors: 'duration-400',
     });
-    const element = document.querySelector(`[href="${pathname}"]`) as HTMLAnchorElement;
-    const link = navbarLinks.find((item) => item.path === pathname) || navbarLinks[0];
+
     moveSvgLine(link, element);
     setActiveElement(element);
     // eslint-disable-next-line react-hooks/exhaustive-deps
