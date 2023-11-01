@@ -58,7 +58,7 @@ const WorkId = (props: { params: { id: string } }) => {
         <a
           href={url}
           target="_blank"
-          className="max-w-full break-words uppercase underline underline-offset-4"
+          className="w-fit max-w-full break-words uppercase underline underline-offset-4"
         >
           {shortUrl}
         </a>

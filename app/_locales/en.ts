@@ -49,7 +49,7 @@ export const en = {
         'Evolving the relationship between companies and their customers through memorable experiences with conversational AI. New features and bugs fixing.',
       description:
         'Lili is a multi-channel conversational assistant powered by conversational AI that will help you automate customer service, transforming repetitive and time-consuming processes into functional systems at a fraction of the cost. My role at Vozy was to take product requirements and work hands on with all engineering areas to develop new features and fix bugs within its web platform.',
-      url: 'https://www.vozy.com',
+      url: 'https://www.vozy.co',
       mainImageSrc: VozyImage,
       tags: [
         'role: software engineer',
