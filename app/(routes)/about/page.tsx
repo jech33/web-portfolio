@@ -24,6 +24,7 @@ const About = () => {
         <div className="flex flex-col-reverse gap-6 md:h-[284px] md:flex-row md:gap-0">
           <div className="h-full w-full bg-background-dark md:w-1/2">
             <iframe
+              title="Google Maps Embedded map"
               className="w-full"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8021461.181462945!2d-79.30661997926354!3d10.983809179411454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42d44d12ae605%3A0x2633844581b917b2!2sBarranquilla%2C%20Atlantico!5e0!3m2!1sen!2sco!4v1698873251366!5m2!1sen!2sco"
               height="284"
