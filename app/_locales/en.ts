@@ -145,7 +145,7 @@ export const en = {
           time: 'CLASS OF 2021',
         },
         {
-          label: 'Bachelor of Civil Engineering',
+          label: 'Bachelor of Science in Civil Engineering',
           place: 'Universidad del Norte',
           time: 'CLASS OF 2018',
         },
