@@ -15,7 +15,7 @@ const WorkCard = (props: Work) => {
   return (
     <article className="inline-block max-w-[25rem] gap-2">
       <section className="relative flex flex-col gap-2">
-        {!isLoadingImage && (
+        {isLoadingImage && (
           <div className="after:content-[' '] absolute top-0 z-[1] h-[300px] w-full bg-background-dark after:absolute after:h-[300px] after:w-full after:animate-pulse after:bg-background-light md:h-[450px] md:after:h-[450px]" />
         )}
         <Image
