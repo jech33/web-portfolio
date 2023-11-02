@@ -5,7 +5,7 @@ import MailIcon from '@/_assets/MailIcon';
 
 const SocialMedia = () => {
   return (
-    <ul className="absolute bottom-0 z-20 flex h-28 w-full items-end justify-center gap-5 bg-gradient-to-t from-background-main from-50% pb-6">
+    <ul className="pointer-events-none absolute bottom-0 z-20 flex h-28 w-full items-end justify-center gap-5 bg-gradient-to-t from-background-main from-50% pb-6 [&>li]:pointer-events-auto">
       <li>
         <a
           className="[&>svg>path]:transition-all [&>svg>path]:duration-200 [&>svg>path]:hover:fill-secondary-main [&>svg>path]:active:fill-secondary-light [&>svg]:transition-all [&>svg]:active:scale-105"
