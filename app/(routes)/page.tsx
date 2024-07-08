@@ -1,7 +1,7 @@
 /** Assets */
-import Typewriter from './_components/Typewriter';
-import IntroAvatar from './_components/IntroAvatar';
-import { getHomePage } from './_api/pages';
+import Typewriter from '@/_components/Typewriter';
+import IntroAvatar from '@/_components/IntroAvatar';
+import { getHomePage } from '@/_api/pages';
 
 export default async function Home() {
   const pageData = await getHomePage();

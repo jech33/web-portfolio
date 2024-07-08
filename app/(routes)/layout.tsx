@@ -2,14 +2,14 @@ import { Montserrat } from 'next/font/google';
 import type { Metadata } from 'next';
 
 /** Functional */
-import Footer from './_components/Footer';
-import Navbar from './_components/Navbar';
-import SocialMedia from './_components/SocialMedia';
-import { baseUrl } from './config';
+import Footer from '@/_components/Footer';
+import Navbar from '@/_components/Navbar';
+import SocialMedia from '@/_components/SocialMedia';
+import { baseUrl } from '@/config';
 
 /** Assets */
-import './globals.css';
-import FixedLoader from './_components/FixedLoader';
+import '@/globals.css';
+import FixedLoader from '@/_components/FixedLoader';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
