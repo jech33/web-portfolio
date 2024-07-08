@@ -29,7 +29,6 @@ export default defineType({
                 },
                 prepare(value) {
                   const { label, place, time } = value;
-                  console.log(value);
                   return {
                     title: `${place} - ${label} [${time}]`,
                   };
