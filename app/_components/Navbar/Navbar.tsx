@@ -44,7 +44,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`after:content-[' '] min-h-6 relative z-50 w-full text-text-secondary
+      className={`after:content-[' '] relative z-50 min-h-6 w-full text-text-secondary
       after:absolute after:-bottom-[8.9px] after:z-50 after:h-[2px] after:w-full after:origin-left
       after:translate-x-[var(--left)] after:scale-x-[var(--width,0px)] after:bg-secondary-main after:transition-transform ${durations.navAfter}
       `}

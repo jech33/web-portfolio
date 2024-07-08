@@ -1,25 +1,26 @@
-import _locales from '@/_locales';
 import Image from 'next/image';
 import React from 'react';
-import CoverImage from '@/public/avatar-original.jpg';
 import AboutSection from './_components/AboutSection';
+import { getAboutPage } from '@/_api/pages';
 
-const About = () => {
-  const { title, description, education, recognitions, workExperience } = _locales.about;
+const About = async () => {
+  const pageData = await getAboutPage();
   return (
     <article className="mx-auto flex max-w-[740px] flex-col pt-6">
       <section className="flex flex-col gap-6 md:gap-0">
         <div className="relative flex h-[284px]">
           <h1 className="absolute flex h-full w-full items-center justify-center bg-background-main bg-opacity-30 p-6 text-center text-3xl md:relative md:w-1/2">
-            {title}
+            {pageData?.title}
           </h1>
-          <Image
-            className="h-full w-1/2 flex-grow object-cover object-top"
-            width={1024}
-            height={720}
-            src={CoverImage}
-            alt={'Javier Echavez Cover Image'}
-          />
+          {pageData?.imageUrl && (
+            <Image
+              className="h-full w-1/2 flex-grow object-cover object-top"
+              width={1024}
+              height={720}
+              src={pageData?.imageUrl}
+              alt={'Javier Echavez Cover Image'}
+            />
+          )}
         </div>
         <div className="flex flex-col-reverse gap-6 md:h-[284px] md:flex-row md:gap-0">
           <div className="h-full w-full bg-background-dark md:w-1/2">
@@ -34,19 +35,11 @@ const About = () => {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-          <p className="h-full w-full md:w-1/2 md:pl-6 md:pt-6">{description}</p>
+          <p className="h-full w-full md:w-1/2 md:pl-6 md:pt-6">{pageData?.description}</p>
         </div>
       </section>
       <section className="mt-12 flex flex-col gap-12">
-        <div className="work">
-          <AboutSection {...workExperience} />
-        </div>
-        <div className="education">
-          <AboutSection {...education} />
-        </div>
-        <div className="recognitions">
-          <AboutSection {...recognitions} />
-        </div>
+        {pageData?.sections.map((section, idx) => <AboutSection key={idx} {...section} />)}
       </section>
     </article>
   );

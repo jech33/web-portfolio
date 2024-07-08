@@ -1,6 +1,7 @@
 'use client';
 
 import { Work } from '@/_types/Work';
+import { PortableText } from 'next-sanity';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -31,7 +32,7 @@ const WorkCard = (props: Work) => {
           <h3 className="text-[32px] font-medium leading-10">{workType}</h3>
           <h4 className="text-base font-medium">{`(${year})`}</h4>
         </div>
-        <p>{shortDescription}</p>
+        {shortDescription && <PortableText value={shortDescription} />}
       </section>
     </article>
   );

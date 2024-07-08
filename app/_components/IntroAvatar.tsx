@@ -1,11 +1,15 @@
 'use client';
 import Image from 'next/image';
 import TagSphere from './TagSphere';
-import ProfilePicture from '@/public/avatar-circle.jpg';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const IntroAvatar = () => {
+export type IntroAvatarProps = {
+  imageUrl: string;
+};
+
+const IntroAvatar = (props: IntroAvatarProps) => {
+  const { imageUrl } = props;
   const [showAvatar, setShowAvatar] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false);
   const animationVariants = {
@@ -38,7 +42,7 @@ const IntroAvatar = () => {
             className="absolute top-0 h-full w-full"
           >
             <Image
-              src={ProfilePicture}
+              src={imageUrl}
               width={200}
               height={200}
               alt="avatar-picture"

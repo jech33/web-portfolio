@@ -1,12 +1,16 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import lang from '@/_locales';
 
-const Typewriter = () => {
+export type TypewriterProps = {
+  phrases: string[];
+};
+
+const Typewriter = (props: TypewriterProps) => {
+  const { phrases } = props;
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentPhrase, setCurrentPhrase] = useState(lang.introPhrases[0]);
+  const [currentPhrase, setCurrentPhrase] = useState(phrases[0]);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
@@ -18,12 +22,12 @@ const Typewriter = () => {
       }, 100);
     } else {
       // ADD THIS CHECK
-      const newPhraseIndex = lang.introPhrases.findIndex((phrase) => phrase === currentPhrase) + 1;
-      const newAvailableIndex = newPhraseIndex >= lang.introPhrases.length ? 0 : newPhraseIndex;
+      const newPhraseIndex = phrases.findIndex((phrase) => phrase === currentPhrase) + 1;
+      const newAvailableIndex = newPhraseIndex >= phrases.length ? 0 : newPhraseIndex;
       setTimeout(() => {
         setCurrentIndex(0);
         setCurrentText('');
-        setCurrentPhrase(lang.introPhrases[newAvailableIndex]);
+        setCurrentPhrase(phrases[newAvailableIndex]);
       }, 1200);
     }
 

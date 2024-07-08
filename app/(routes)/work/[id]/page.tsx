@@ -1,13 +1,10 @@
-'use client';
+import { PortableText } from 'next-sanity';
+import { getProjectBySlug } from '@/_api/work';
+import MainImage from './MainImage';
 
-import Image from 'next/image';
-import { getProjects } from '../Work.utils';
-import { useState } from 'react';
-
-const WorkId = (props: { params: { id: string } }) => {
+const WorkId = async (props: { params: { id: string } }) => {
   const { id } = props.params;
-  const project = getProjects().find((project) => project.id === id);
-  const [isLoadingImg, setIsLoadingImg] = useState(true);
+  const project = await getProjectBySlug(id);
 
   if (!project) return null;
 
@@ -25,23 +22,10 @@ const WorkId = (props: { params: { id: string } }) => {
             <h2 className="text-3xl lg:text-5xl">{workType}</h2>
           </div>
         </div>
-        <h3>{shortDescription}</h3>
+        {shortDescription && <PortableText value={shortDescription} />}
       </section>
       <div className="relative my-3">
-        {isLoadingImg && (
-          <>
-            <div className="absolute left-0 top-0 z-10 h-full w-full bg-background-dark" />
-            <div className="absolute left-0 top-0 z-10 h-full w-full animate-pulse bg-background-light" />
-          </>
-        )}
-        <Image
-          className="w-full object-cover"
-          alt={`${id}-main-image`}
-          height={1080}
-          width={1920}
-          src={mainImageSrc}
-          onLoad={() => setIsLoadingImg(false)}
-        />
+        <MainImage id={id} src={mainImageSrc} />
       </div>
       <section className="flex flex-col gap-6">
         <div className="flex flex-wrap items-center gap-3">
@@ -54,7 +38,7 @@ const WorkId = (props: { params: { id: string } }) => {
             </p>
           ))}
         </div>
-        <p>{description}</p>
+        {description && <PortableText value={description} />}
         <a
           href={url}
           target="_blank"

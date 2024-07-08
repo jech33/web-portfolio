@@ -1,13 +1,13 @@
-import { StaticImageData } from 'next/image';
+import { BlockContent } from '../../sanity.types';
 
 export type Work = {
-  id: string;
+  slug: string;
   year: number;
   title: string;
   workType: string;
-  shortDescription: string;
-  description: string;
+  shortDescription: BlockContent | null;
+  description: BlockContent | null;
   url: string;
-  mainImageSrc: StaticImageData;
+  mainImageSrc: string;
   tags: string[];
 };
