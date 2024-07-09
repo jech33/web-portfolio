@@ -44,7 +44,15 @@ export const getHomePage = async (): Promise<HomePage | null> => {
 
 export const getAboutPage = async (): Promise<AboutPage | null> => {
   const getAboutPageQuery = groq`*[_type == "aboutPage" && slug.current == "about"][0]{title, description, image, sections[]{title, items[] {label, place, time}}}`;
-  const data = await client.fetch(getAboutPageQuery);
+  const data = await client.fetch(
+    getAboutPageQuery,
+    {},
+    {
+      next: {
+        revalidate: 60, // look for updates to revalidate cache every minute
+      },
+    }
+  );
 
   const result: AboutSanity = data;
 

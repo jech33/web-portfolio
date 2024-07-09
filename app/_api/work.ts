@@ -22,7 +22,15 @@ const transformProject = (project: Project): Work => {
 export const getProjectBySlug = async (sanitySlug: string): Promise<Work | null> => {
   // @sanity-typegen-ignore
   const getProjectBySlugQuery = groq`*[_type == "project" && slug.current == "${sanitySlug}"][0]`;
-  const data = await client.fetch(getProjectBySlugQuery);
+  const data = await client.fetch(
+    getProjectBySlugQuery,
+    {},
+    {
+      next: {
+        revalidate: 60, // look for updates to revalidate cache every minute
+      },
+    }
+  );
 
   const result: Project = data;
 
@@ -31,7 +39,15 @@ export const getProjectBySlug = async (sanitySlug: string): Promise<Work | null>
 
 export const getProjects = async (): Promise<Work[]> => {
   const getProjectsQuery = groq`*[_type == "project"] | order(startDate desc)`;
-  const projects: Project[] = await client.fetch(getProjectsQuery);
+  const projects: Project[] = await client.fetch(
+    getProjectsQuery,
+    {},
+    {
+      next: {
+        revalidate: 60, // look for updates to revalidate cache every minute
+      },
+    }
+  );
 
   return projects.map((project) => transformProject(project));
 };
