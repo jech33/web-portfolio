@@ -57,12 +57,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`${montserrat.className} container mx-auto bg-background-main px-6 text-text-primary`}
       >
-        <FixedLoader />
-        <div className="flex max-h-[100dvh] min-h-[100svh] flex-col gap-2 py-4">
+        <div className="flex max-h-dvh min-h-svh flex-col gap-2 py-4">
           <Navbar />
-          <main className="relative z-0 flex w-full flex-grow overflow-auto border-[1px] border-divider-main">
-            <div className="pointer-events-none absolute top-0 z-10 flex h-6 w-full items-end justify-center gap-5 bg-gradient-to-b from-background-main from-20%" />
-            <div className="z-1 flex max-h-full flex-grow flex-col justify-between overflow-auto px-6 pb-[112px]">
+          <main className="relative z-0 flex w-full grow overflow-auto border border-divider-main">
+            <div className="pointer-events-none absolute top-0 z-10 flex h-6 w-full items-end justify-center gap-5 bg-linear-to-b from-background-main from-20%" />
+            <div className="z-1 flex max-h-full grow flex-col justify-between overflow-auto px-6 pb-28">
               {children}
             </div>
             <SocialMedia />

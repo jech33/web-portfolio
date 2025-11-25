@@ -2,8 +2,10 @@ import { PortableText } from 'next-sanity';
 import { getProjectBySlug } from '@/_api/work';
 import MainImage from './MainImage';
 
-const WorkId = async (props: { params: { id: string } }) => {
-  const { id } = props.params;
+const WorkId = async (props: any) => {
+  // `params` may be a Promise in some Next runtimes — unwrap at runtime.
+  // Use `any` here to avoid Next's generated type checks failing during build.
+  const { id } = await props.params;
   const project = await getProjectBySlug(id);
 
   if (!project) return null;
@@ -17,8 +19,8 @@ const WorkId = async (props: { params: { id: string } }) => {
       <section className="flex flex-col gap-6">
         <div className="flex flex-col md:flex-row md:gap-4">
           <h1 className="text-3xl lg:text-5xl">{title}</h1>
-          <div className="flex flex-grow items-center gap-4">
-            <span className="h-[1px] flex-grow bg-text-primary" />
+          <div className="flex grow items-center gap-4">
+            <span className="h-px grow bg-text-primary" />
             <h2 className="text-3xl lg:text-5xl">{workType}</h2>
           </div>
         </div>
@@ -32,7 +34,7 @@ const WorkId = async (props: { params: { id: string } }) => {
           {tags.map((tag, idx) => (
             <p
               key={idx}
-              className="overflow-hidden text-ellipsis whitespace-nowrap rounded-full border-[1px] border-text-secondary bg-background-light px-2 uppercase"
+              className="overflow-hidden text-ellipsis whitespace-nowrap rounded-full border border-text-secondary bg-background-light px-2 uppercase"
             >
               {tag}
             </p>
@@ -42,7 +44,7 @@ const WorkId = async (props: { params: { id: string } }) => {
         <a
           href={url}
           target="_blank"
-          className="w-fit max-w-full break-words uppercase underline underline-offset-4"
+          className="w-fit max-w-full wrap-break-word uppercase underline underline-offset-4"
         >
           {shortUrl}
         </a>
